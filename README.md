@@ -30,6 +30,12 @@ sudo apt-get install python-yaml  # in Ubuntu
 yum install python-yaml           # in CentOS
 ```
 
+
+# for arrow dependency
+```
+pip install arrow
+```
+
 # Recommended utility
 
 ```

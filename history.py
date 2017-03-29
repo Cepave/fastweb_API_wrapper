@@ -7,6 +7,7 @@ import json
 import sys
 import os.path
 import yaml
+import arrow
 
 def login(name, password):
     url = "http://owl.fastweb.com.cn/api/v1/auth/login"
@@ -91,13 +92,16 @@ def readConf():
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print "usage: ./history.py [timestampStart] [timestampEnd] [platformName]"
-        print "example: ./history.py  1478700000 1478764076 c01.i07"
+        print "usage:    ./history.py [time Start in ISO8601] [time End in ISO8601] [platformName]"
+        print "example:  ./history.py 2017-02-28T06:01:00+0800 2017-03-28T06:01:00+0800 c01.i07"
         sys.exit(1) 
     #ts = int(time.time()) # input
     #platform = "c06.i06"  # input
-    startTs = int(sys.argv[1])      # input
-    endTs = int(sys.argv[2])      # input
+    sTime = arrow.get(sys.argv[1])
+    eTime = arrow.get(sys.argv[2])
+    startTs = sTime.timestamp
+    endTs = eTime.timestamp
+
     platform = sys.argv[3]     # input
     user = ""      # data
     password = ""    # data
