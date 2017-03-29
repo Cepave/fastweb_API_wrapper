@@ -47,3 +47,9 @@ yum install jq      # in CentOS
 # setup 
 
 fill in the `username`, `password` in `secret.yaml`
+
+# typical use
+
+```
+./history.py 2017-02-28T06:01:00+0800 2017-03-28T06:01:00+0800 c01.i07 | jq '.'
+```
