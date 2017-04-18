@@ -65,7 +65,8 @@ def history(user, sig, startTs, endTs, platform, hostnameFilters):
                 "metric": i["metric"],
                 "severity": i["severity"],
                 "status": i["status"],
-                "process": i["process"]
+                "process": i["process"],
+                "timeStart": i["timeStart"]
             }
             result.append(item)
 
