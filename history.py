@@ -44,7 +44,7 @@ def history(user, sig, startTs, endTs, platform, hostnameFilters):
         "status": "PROBLEM,OK",
         "process": "ALL",
         "includeEvents": True,
-        "limit": 2000,
+        "limit": 20000,
         "startTime": startTs,
         "endTime":   endTs,
         "cName": user,
